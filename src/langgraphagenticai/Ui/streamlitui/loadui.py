@@ -54,11 +54,12 @@ class LoadStreamlitUI:
             if self.user_controls["selected_llm"] == 'Groq':
                 # Model Selection
                 model_options = self.config.get_groq_model_options()
+                self.user_controls["selected_groq_models"] = st.selectbox("Select Model", model_options)
                 # API Key input
-                self.user_controls["selected_groq_models"] = st.session_state["GROQ_API_KEY"] = st.text_input("API Key", type="password")
+                self.user_controls["GROQ_API_KEY"] = st.session_state["GROQ_API_KEY"] = st.text_input("API Key", type="password")
 
                 #Validate API Key
-                if not self.user_controls["selected_groq_models"]:
+                if not self.user_controls["GROQ_API_KEY"]:
                     st.warning("Please Enter your GROQ API Key to Preoceed. Don't have? refer : https://console.groq.com/keys")
 
                 # Use case Selection
@@ -67,7 +68,7 @@ class LoadStreamlitUI:
                 if "state" not in st.session_state:
                     st.session_state.state = self.initialize_session()
 
-        self.render_requirements()
+        #self.render_requirements()
         return self.user_controls
 
 
