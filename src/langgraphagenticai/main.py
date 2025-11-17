@@ -6,6 +6,7 @@ from src.langgraphagenticai.graph.graph_builder import GraphBuilder
 from src.langgraphagenticai.Ui.streamlitui.display_result import DisplayResultsStreamlit
 
 
+
 #MAIN FUNCTION START
 def load_langgraph_agenticai_app():
     """
